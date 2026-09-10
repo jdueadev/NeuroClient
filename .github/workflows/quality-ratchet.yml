@@ -1,8 +1,6 @@
 name: Quality Ratchet
 
 on:
-    schedule:
-        - cron: "0 4 * * 1"
     workflow_dispatch:
 
 # The ratchet PR touches only ci/quality-thresholds.env — never workflow
@@ -13,6 +11,8 @@ permissions:
 
 jobs:
     ratchet:
+        # Disabled by request; restore the schedule and remove this guard to re-enable.
+        if: ${{ false }}
         name: Tighten quality thresholds
         runs-on: ubuntu-latest
         steps:
