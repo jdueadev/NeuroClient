@@ -391,14 +391,14 @@ pub async fn subscribe_metrics(
         let time = event.get("time")?.as_f64()?;
         Some(PerformanceMetrics {
             timestamp: seconds_to_micros_i64(time)?,
-            attention: att_idx.and_then(&val),
-            engagement: eng_idx.and_then(&val),
-            excitement: exc_idx.and_then(&val),
-            long_excitement: lex_idx.and_then(&val),
-            stress: str_idx.and_then(&val),
-            relaxation: rel_idx.and_then(&val),
-            interest: int_idx.and_then(&val),
-            focus: foc_idx.and_then(&val),
+            attention: att_idx.and_then(val),
+            engagement: eng_idx.and_then(val),
+            excitement: exc_idx.and_then(val),
+            long_excitement: lex_idx.and_then(val),
+            stress: str_idx.and_then(val),
+            relaxation: rel_idx.and_then(val),
+            interest: int_idx.and_then(val),
+            focus: foc_idx.and_then(val),
         })
     })))
 }
